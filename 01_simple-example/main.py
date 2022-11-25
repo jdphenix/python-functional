@@ -11,11 +11,11 @@ def get_above_threshold_items(data: Dict[str, Any]) -> Iterable[Any]:
 
     return items
 
-def get_items_of_type(data: Dict[str, Any], type: str) -> Iterable[Any]:
+def get_items_of_type(data: Dict[str, Any], item_type: str) -> Iterable[Any]:
     items = []
     
     for item in data["items"]:
-        if item["type"] == type:
+        if item["type"] == item_type:
             items.append(item)
 
     return items
