@@ -1,0 +1,117 @@
+{
+    "price_thresh": [
+        {
+            "date": "2021-01-01",
+            "thresh": 3.0
+        },
+        {
+            "date": "2021-04-01",
+            "thresh": 0.5
+        }
+    ],
+    "price_thresh_now": 0.5,
+    "items": [
+        {
+            "id": "0001",
+            "type": "donut",
+            "name": "Cake",
+            "ppu": 0.55,
+            "batters": [
+                {
+                    "id": "1001",
+                    "type": "Regular"
+                },
+                {
+                    "id": "1002",
+                    "type": "Chocolate"
+                },
+                {
+                    "id": "1003",
+                    "type": "Blueberry"
+                },
+                {
+                    "id": "1004",
+                    "type": "Devil's Food"
+                }
+            ],
+            "topping": [
+                {
+                    "id": "5001",
+                    "type": "None"
+                },
+                {
+                    "id": "5002",
+                    "type": "Glazed"
+                },
+                {
+                    "id": "5005",
+                    "type": "Sugar"
+                },
+                {
+                    "id": "5007",
+                    "type": "Powdered Sugar"
+                },
+                {
+                    "id": "5006",
+                    "type": "Chocolate with Sprinkles"
+                },
+                {
+                    "id": "5003",
+                    "type": "Chocolate"
+                },
+                {
+                    "id": "5004",
+                    "type": "Maple"
+                }
+            ]
+        },
+        {
+            "id": "0002",
+            "type": "donut",
+            "name": "Glazed",
+            "ppu": 0.45,
+            "batters": [
+                {
+                    "id": "1001",
+                    "type": "Regular"
+                },
+                {
+                    "id": "1002",
+                    "type": "Chocolate"
+                }
+            ],
+            "topping": [
+                {
+                    "id": "5002",
+                    "type": "Glazed"
+                }
+            ]
+        },
+        {
+            "id": "0003",
+            "type": "cake",
+            "name": "Angel Food Cake",
+            "ppu": 6.25,
+            "batters": [
+                {
+                    "id": "1005",
+                    "type": "Vanilla"
+                }
+            ],
+            "topping": [
+                {
+                    "id": "5002",
+                    "type": "Glazed"
+                },
+                {
+                    "id": "5006",
+                    "type": "Chocolate with Sprinkles"
+                },
+                {
+                    "id": "5003",
+                    "type": "Chocolate"
+                }
+            ]
+        }
+    ]
+}
