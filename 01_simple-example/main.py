@@ -5,29 +5,17 @@ from typing import Any, Dict, Iterable
 def filter_item_above_threshold(threshold: float, item) -> bool:
     return item["ppu"] > threshold
 
-def filter_item_type(type: str, item) -> bool:
-    return item["type"] == type
+def filter_item_type(item_type: str, item) -> bool:
+    return item["type"] == item_type
 
 def get_above_threshold_items(data: Dict[str, Any]) -> Iterable[Any]:
     price_threshold = data["price_thresh_now"]
-    items = []
     is_above_threshold = partial(filter_item_above_threshold, price_threshold)
-
-    for item in data["items"]:
-        if is_above_threshold(item):
-            items.append(item)
-
-    return items
+    return filter(is_above_threshold, data["items"])
 
 def get_items_of_type(data: Dict[str, Any], type: str) -> Iterable[Any]:
-    items = []
     is_type = partial(filter_item_type, type)
-    
-    for item in data["items"]:
-        if is_type(item):
-            items.append(item)
-
-    return items
+    return filter(is_type, data["items"])
 
 with open("data/bakery_inventory.json") as file: 
     data = json.load(file)
