@@ -1,4 +1,5 @@
 import json
+from functools import partial
 from typing import Any, Dict, Iterable
 
 def filter_item_above_threshold(threshold: float, item) -> bool:
@@ -10,18 +11,20 @@ def filter_item_type(type: str, item) -> bool:
 def get_above_threshold_items(data: Dict[str, Any]) -> Iterable[Any]:
     price_threshold = data["price_thresh_now"]
     items = []
+    is_above_threshold = partial(filter_item_above_threshold, price_threshold)
 
     for item in data["items"]:
-        if filter_item_above_threshold(price_threshold, item):
+        if is_above_threshold(item):
             items.append(item)
 
     return items
 
 def get_items_of_type(data: Dict[str, Any], type: str) -> Iterable[Any]:
     items = []
+    is_type = partial(filter_item_type, type)
     
     for item in data["items"]:
-        if filter_item_type(type, item):
+        if is_type(item):
             items.append(item)
 
     return items
