@@ -3,7 +3,7 @@ This is the first is a (probably) series of writings on functional programming
 in Python. The intended audience of these posts is anyone who has basic
 programming knowledge. Python experience helps but is not necessary.
 
-It's 2022, so all Python code uses Python 3.
+Every post has an associated git branch, which you can use to follow along.
 
 ## An important note
 It is first important to address a common concern regarding functional 
@@ -21,8 +21,9 @@ endofunctos, lambda calculus, and the like. I will not be using mathematical
 terminology in these posts, because it is frankly not necessary.
 
 ## A simple example
-> _Data_: [bakery_inventory.json](../data/bakery_inventory.json) <br>
-_Code_: [imperative.py](../01_simple-example/imperative.py)<br>
+> _Data_: [bakery_inventory.json](../data/bakery_inventory.json)<br>
+_Code_: [Python code](../01_simple-example/imperative.py)<br>
+_Branch_: `post/01-simple-example`<br>
 _Requirement_: I need to know all items with a PPU (price per unit) greater
 than the current price threshold.
 
@@ -76,4 +77,9 @@ perform very similar functions, and in much the same manner. Let's see how we
 can abstract out common functionality. 
 
 Consider `get_items_of_type`, and note that the `if` clause is filtering out 
-items that don't pass it. 
+items that don't pass it. We can define a function that does this for one item.
+
+```py
+def filter_item_type(item, type: str) -> bool:
+    return item["type"] == type
+```
